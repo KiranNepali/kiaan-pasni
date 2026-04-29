@@ -85,7 +85,7 @@ export const GallerySection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-text-mid text-sm max-w-md mx-auto"
+            className="text-text-mid text-sm max-w-md mx-auto px-8"
           >
             A glimpse into Kiaan's journey of love, laughter, and little adventures
           </motion.p>
