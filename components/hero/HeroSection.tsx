@@ -113,7 +113,7 @@ export const HeroSection: React.FC = () => {
         transition={{ delay: 0.75, duration: 1 }}
         className="relative z-10 text-[0.95rem] text-text-mid tracking-[0.1em] bg-white/30 backdrop-blur-sm px-4 py-2 rounded-full"
       >
-        Saturday, 14th June 2025 &nbsp;·&nbsp; Kathmandu, Nepal
+        Saturday, 28th June 2026 &nbsp;·&nbsp; Seinajoki, Finland
       </motion.p>
 
       <ScrollIndicator />

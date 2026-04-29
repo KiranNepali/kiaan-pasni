@@ -73,8 +73,8 @@ export const RSVPSection: React.FC = () => {
               world to our family. 💛
             </p>
             <div className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-[0.75rem] font-medium text-text-mid tracking-[0.05em] mb-1">
+              {/* <div> */}
+                {/* <label htmlFor="name" className="block text-[0.75rem] font-medium text-text-mid tracking-[0.05em] mb-1">
                   Your Name
                 </label>
                 <input
@@ -128,12 +128,12 @@ export const RSVPSection: React.FC = () => {
                   placeholder="e.g. Dheeray ramro hoos! 🌟"
                   className="w-full px-4 py-3 border-2 border-gold/20 rounded-xl font-sans text-[0.9rem] text-dark bg-cream outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(201,153,74,0.1)] transition-all"
                 />
-              </div>
+              </div> */}
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={submitRSVP}
-                className="w-full py-4 bg-gradient-to-r from-rose to-gold text-white rounded-xl font-sans font-medium text-base cursor-pointer mt-2 shadow-md hover:shadow-lg transition-all relative overflow-hidden group"
+                className="w-full py-4 bg-gradient-to-r from-rose to-gold text-zinc-800 rounded-xl font-sans font-medium text-base cursor-pointer mt-2 shadow-md hover:shadow-lg transition-all relative overflow-hidden group"
               >
                 <span className="relative z-10">🙏 &nbsp; Count Me In!</span>
                 <div className="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
