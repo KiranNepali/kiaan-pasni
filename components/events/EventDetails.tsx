@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const eventDetails = [
   { icon: "📅", label: "Date", value: "14th June\n2025", sub: "Saturday · Auspicious Tithi" },
   { icon: "🕙", label: "Time", value: "10:00 AM\nOnwards", sub: "Ceremony begins at 10:30 AM" },
-  { icon: "📍", label: "Venue", value: "Raut\nResidence", sub: "Baneshwor-10, Kathmandu" },
+  { icon: "📍", label: "Venue", value: "Pajkka", sub: "Seuralantie 11, 60200 Seinäjoki" },
   { icon: "🎊", label: "Dress Code", value: "Traditional\nAttire", sub: "Daura Suruwal · Lehenga · Sari" },
   { icon: "🍽️", label: "Feast", value: "Grand\nBhoj", sub: "Traditional Nepali lunch follows" },
   { icon: "🙏", label: "Blessing", value: "Tika &\nAshirwad", sub: "Bring your warmest blessings" },

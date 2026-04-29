@@ -47,7 +47,7 @@ export const StorySection: React.FC = () => {
 
       <div className="max-w-6xl mx-auto mt-16 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         {timelineItems.map((item, idx) => (
-          <TimelineCard key={idx} {...item} index={idx} />
+          <TimelineCard key={idx} {...item} index={idx}  />
         ))}
       </div>
     </section>

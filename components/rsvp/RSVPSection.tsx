@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export const RSVPSection: React.FC = () => {
   const googleFormUrl =
-    "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"; // Replace with your actual Google Form link
+    "https://docs.google.com/forms/d/e/1FAIpQLSf1xgzw9bRuSsijp528cbGi6MDdeDj-kf2jlFJdE5gT_IoApw/viewform?usp=publish-editor"; // Replace with your actual Google Form link
 
   return (
     <section className="relative z-10 py-20 px-6 pb-28 bg-cream" id="rsvp">

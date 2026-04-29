@@ -57,9 +57,9 @@ export const GallerySection: React.FC = () => {
 
         <div className="text-center relative z-10">
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            // initial={{ opacity: 0, y: 20 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // transition={{ delay: 0.1 }}
             className="text-gold text-xs tracking-[0.25em] uppercase font-medium mb-2 inline-flex items-center gap-2"
           >
             <span className="w-8 h-px bg-gold/40"></span>
@@ -67,9 +67,9 @@ export const GallerySection: React.FC = () => {
             <span className="w-8 h-px bg-gold/40"></span>
           </motion.p>
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            // initial={{ opacity: 0, y: 20 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // transition={{ delay: 0.2 }}
             className="font-serif text-[clamp(2rem,6vw,3.5rem)] font-light text-dark mb-4"
           >
             Our <em className="italic text-rose not-italic">Precious</em> Moments
@@ -91,7 +91,7 @@ export const GallerySection: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.5, ease:easeInOut }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: false, margin: "-50px" }}
               whileHover={{ y: -8 }}
               onClick={() => setSelectedImage(item.id)}
               className="group cursor-pointer"

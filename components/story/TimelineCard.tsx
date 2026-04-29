@@ -1,8 +1,8 @@
 // components/story/TimelineCard.tsx
-'use client';
+"use client";
 
-import React from 'react';
-import { easeInOut, motion, spring } from 'framer-motion';
+import React from "react";
+import { easeInOut, motion, spring } from "framer-motion";
 
 interface TimelineCardProps {
   icon: string;
@@ -12,12 +12,24 @@ interface TimelineCardProps {
   index: number;
 }
 
-export const TimelineCard: React.FC<TimelineCardProps> = ({ icon, month, title, text, index }) => {
+export const TimelineCard: React.FC<TimelineCardProps> = ({
+  icon,
+  month,
+  title,
+  text,
+  index,
+}) => {
   return (
     <motion.div
+      key={index}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ delay:0.5,duration: 0.7, ease:easeInOut }}
+      transition={{
+        delay: index * 0.1,
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+      viewport={{ once: false, amount: 0.2 }}
       // viewport={{ once: true }}
       className="bg-white/65 backdrop-blur-xl border cursor-pointer border-white/80 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
     >
@@ -34,9 +46,7 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({ icon, month, title, 
       <h3 className="font-serif text-[1.4rem] font-normal text-dark mb-2">
         {title}
       </h3>
-      <p className="text-[0.85rem] text-text-mid leading-relaxed">
-        {text}
-      </p>
+      <p className="text-[0.85rem] text-text-mid leading-relaxed">{text}</p>
     </motion.div>
   );
 };
