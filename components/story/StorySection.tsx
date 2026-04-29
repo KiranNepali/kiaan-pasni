@@ -8,22 +8,22 @@ import { MandalaDivider } from '../shared/MandalaDivider';
 
 const timelineItems = [
   {
-    icon: "🌅",
+    icon: "👶",
     month: "Jan 2026",
     title: "I Arrived",
-    text: "A tiny miracle wrapped in warmth, I came into this world and filled our home with light, laughter, and love we never knew possible.",
+    text: "A tiny miracle arrived, filling our home with light, laughter, and love.",
   },
   {
-    icon: "🌱",
+    icon: "🍼",
     month: "Now · 3 Months",
     title: "I Grew",
-    text: "With each sunrise I discovered something new — a smile, a giggle, curious eyes wide open to the beauty of the world around me.",
+    text: "Each day brings something new — smiles, giggles, and curious little discoveries.",
   },
   {
     icon: "🍚",
     month: "June 2026",
     title: "First Rice",
-    text: "Now comes the sacred moment — the first grain of rice touches my lips, blessed by family, tradition, and the prayers of those who love me.",
+    text: "A special moment — my first taste of rice, blessed with love and tradition.",
   },
 ];
 
