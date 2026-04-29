@@ -29,7 +29,7 @@ export const CulturalSection: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        <div className="reveal">
+        <div className="">
           <p className="text-gold-light text-xs tracking-[0.25em] uppercase font-medium mb-2">
             ✦ Our sacred tradition ✦
           </p>

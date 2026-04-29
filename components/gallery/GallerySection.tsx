@@ -62,7 +62,7 @@ export const GallerySection: React.FC = () => {
           <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-rose/5 blur-3xl" />
         </div>
 
-        <div className="reveal text-center relative z-10">
+        <div className="text-center relative z-10">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

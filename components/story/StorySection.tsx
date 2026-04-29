@@ -32,7 +32,7 @@ export const StorySection: React.FC = () => {
     <section className="relative z-10 py-12 bg-gradient-to-b from-cream via-blush-light to-cream" id="story">
       <MandalaDivider />
 
-      <div className="reveal text-center mt-8">
+      <div className="text-center mt-8">
         <p className="section-label-inline text-gold text-xs tracking-[0.25em] uppercase font-medium mb-2">
           ✦ His little milestones ✦
         </p>
