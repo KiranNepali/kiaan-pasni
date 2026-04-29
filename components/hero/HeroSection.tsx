@@ -16,7 +16,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-8 overflow-hidden"
+      className="relative md:min-h-screen py-20 md:py-0 flex flex-col items-center justify-center text-center px-8 overflow-hidden"
       style={{
         background: "radial-gradient(ellipse 80% 70% at 50% 30%, #fde8e4 0%, #fdf6ef 55%, #f3e8d8 100%)",
       }}
@@ -39,7 +39,8 @@ export const HeroSection: React.FC = () => {
         />
       </div>
 
-      <motion.div style={{ y: lotusY }} className="relative z-10 mb-6">
+    <div className='w-full flex justify-center items-center flex-col -mt-1.5 md:-mt-10'>
+        <motion.div style={{ y: lotusY }} className="relative z-10 mb-6">
         <LotusIcon />
       </motion.div>
 
@@ -68,7 +69,7 @@ export const HeroSection: React.FC = () => {
             backgroundSize: "200% auto"
           }}
         >
-          Raut
+          Richheart Raut
         </motion.span>
       </motion.h1>
 
@@ -111,12 +112,14 @@ export const HeroSection: React.FC = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.75, duration: 1 }}
-        className="relative z-10 text-[0.95rem] text-text-mid tracking-[0.1em] bg-white/30 backdrop-blur-sm px-4 py-2 rounded-full"
+        className="relative flex flex-col justify-center items-center z-10 text-[0.95rem] text-text-mid tracking-widest text-black bg-white/30 backdrop-blur-sm px-4 py-2 rounded-full"
       >
-        Saturday, 28th June 2026 &nbsp;·&nbsp; Seinajoki, Finland
+        <span>Sunday, 28th June 2026</span> 
+        <span><span className='font-bold'>Venue:</span> Pajkka, Seuralantie 11, 60200 Seinäjoki</span>
       </motion.p>
 
       <ScrollIndicator />
+    </div>
     </section>
   );
 };

@@ -11,11 +11,11 @@ export const ScrollIndicator: React.FC = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1}}
       transition={{ delay: 1.2, duration: 1 }}
       onClick={scrollToStory}
-      className="absolute  bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-text-light text-[0.7rem] tracking-[0.12em] uppercase z-10 cursor-pointer hover:text-gold transition-all duration-300 hover:-translate-y-1"
+      className="md:absolute mt-5 md:mt-0  bottom-5 md:bottom-8 left-1/2 md:-translate-x-1/2 flex flex-col items-center gap-1 text-text-light text-[0.7rem] tracking-[0.12em] uppercase z-10 cursor-pointer hover:text-gold transition-all duration-300 hover:-translate-y-1"
     >
       <div className="w-px h-10 bg-gradient-to-b from-[#e8c97a] to-transparent animate-[scrollPulse_2s_ease-in-out_infinite]" />
       scroll

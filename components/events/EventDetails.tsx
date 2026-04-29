@@ -26,38 +26,42 @@ export const EventDetails: React.FC = () => {
       </div>
 
       <div className="max-w-6xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {eventDetails.map((item, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1, duration: 0.7 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -6 }}
-            className="bg-white/65 backdrop-blur-xl border border-white/80 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none" />
-            
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-blush to-warm rounded-full flex items-center justify-center text-[1.8rem] shadow-md"
-            >
-              {item.icon}
-            </motion.div>
-            
-            <p className="text-[0.7rem] tracking-[0.15em] uppercase text-gold font-medium mb-1">
-              {item.label}
-            </p>
-            
-            <h3 className="font-serif text-[1.4rem] font-normal text-dark mb-2 whitespace-pre-line leading-tight">
-              {item.value}
-            </h3>
-            
-            <p className="text-[0.85rem] text-text-mid leading-relaxed">
-              {item.sub}
-            </p>
-          </motion.div>
-        ))}
+    {eventDetails.map((item, idx) => (
+  <motion.div
+    key={idx}
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ 
+      delay: idx * 0.1, 
+      duration: 0.5,
+      ease: "easeOut"
+    }}
+    viewport={{ once: false, amount: 0.2 }}
+    className="bg-white/65 cursor-pointer backdrop-blur-xl border border-white/80 rounded-3xl p-8 text-center shadow-lg transition-all duration-300 relative overflow-hidden"
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none" />
+    
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.2 }}
+      className="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-blush to-warm rounded-full flex items-center justify-center text-[1.8rem] shadow-md"
+    >
+      {item.icon}
+    </motion.div>
+    
+    <p className="text-[0.7rem] tracking-[0.15em] uppercase text-gold font-medium mb-1">
+      {item.label}
+    </p>
+    
+    <h3 className="font-serif text-[1.4rem] font-normal text-dark mb-2 whitespace-pre-line leading-tight">
+      {item.value}
+    </h3>
+    
+    <p className="text-[0.85rem] text-text-mid leading-relaxed">
+      {item.sub}
+    </p>
+  </motion.div>
+))}
       </div>
     </section>
   );
