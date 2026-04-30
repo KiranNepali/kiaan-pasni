@@ -51,7 +51,10 @@ export const HeroSection: React.FC = () => {
       </div>
 
       <div className="w-full flex justify-center items-center flex-col -mt-1.5 md:-mt-10">
-        <motion.div style={{ y: lotusY }} className="relative z-10 mb-6 flex justify-center items-center">
+        <motion.div
+          style={{ y: lotusY }}
+          className="relative z-10 mb-6 flex justify-center items-center"
+        >
           <LotusIcon />
         </motion.div>
 
@@ -80,18 +83,21 @@ export const HeroSection: React.FC = () => {
         >
           Kiaan
           <motion.span
-            animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            animate={{
+              // scale: [1, 1, 1],
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+            }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="block italic text-[clamp(2rem,6vw,4.5rem)] tracking-wider font-light bg-clip-text text-transparent"
             style={{
-              backgroundImage: "linear-gradient(to right, #f7c5c0, #e8c97a)",
+              backgroundImage:
+                "linear-gradient(to right, #d4847a, #e8c97a, #d4847a)",
               backgroundSize: "200% auto",
             }}
           >
             Richheart Raut
           </motion.span>
         </motion.h1>
-
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,7 +119,7 @@ export const HeroSection: React.FC = () => {
             duration: 1,
             ease: [0.68, -0.55, 0.265, 1.55],
           }}
-          className="relative z-10 text-sm text-text-light tracking-[0.08em]"
+          className="relative z-10 text-sm  tracking-[0.08em]"
         >
           invites you to share in a moment of pure joy
         </motion.p>
