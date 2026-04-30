@@ -71,7 +71,7 @@ export const CulturalSection: React.FC = () => {
               key={idx}
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{  type: "spring", duration:0.5, ease:easeInOut}}
+              transition={{ duration:0.5, ease:easeInOut}}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
               className="flex flex-col items-center gap-2"

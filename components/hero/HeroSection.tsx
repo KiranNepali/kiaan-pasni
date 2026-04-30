@@ -58,7 +58,11 @@ export const HeroSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 1,  ease: [0.68, -0.55, 0.265, 1.55], }}
+          transition={{
+            delay: 0.2,
+            duration: 1,
+            ease: [0.68, -0.55, 0.265, 1.55],
+          }}
           className="relative z-10 inline-flex items-center gap-2 bg-white/60 backdrop-blur-md border border-gold/25 rounded-full px-5 py-1.5 text-xs tracking-wider uppercase text-gold font-medium mb-6"
         >
           ✦ Pasni Ceremony ✦
@@ -67,7 +71,11 @@ export const HeroSection: React.FC = () => {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 1,  ease: [0.68, -0.55, 0.265, 1.55], }}
+          transition={{
+            delay: 0.3,
+            duration: 1,
+            ease: [0.68, -0.55, 0.265, 1.55],
+          }}
           className="relative z-10 font-serif text-[clamp(4rem,12vw,9rem)] font-light leading-[0.9] text-dark tracking-[-0.02em]"
         >
           Kiaan
@@ -87,7 +95,11 @@ export const HeroSection: React.FC = () => {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 1,  ease: [0.68, -0.55, 0.265, 1.55], }}
+          transition={{
+            delay: 0.45,
+            duration: 1,
+            ease: [0.68, -0.55, 0.265, 1.55],
+          }}
           className="relative z-10 font-['Satisfy',cursive] text-[clamp(1.1rem,3vw,1.6rem)] text-gold mt-5 mb-2"
         >
           A Baby's First Rice Journey
@@ -96,7 +108,11 @@ export const HeroSection: React.FC = () => {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.55, duration: 1,  ease: [0.68, -0.55, 0.265, 1.55], }}
+          transition={{
+            delay: 0.55,
+            duration: 1,
+            ease: [0.68, -0.55, 0.265, 1.55],
+          }}
           className="relative z-10 text-sm text-text-light tracking-[0.08em]"
         >
           invites you to share in a moment of pure joy
@@ -105,7 +121,11 @@ export const HeroSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.65, duration: 1,  ease: [0.68, -0.55, 0.265, 1.55], }}
+          transition={{
+            delay: 0.65,
+            duration: 1,
+            ease: [0.68, -0.55, 0.265, 1.55],
+          }}
           className="relative z-10 flex items-center gap-4 my-10"
         >
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#e8c97a] to-transparent" />
@@ -122,7 +142,11 @@ export const HeroSection: React.FC = () => {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.75, duration: 1.5,  ease: [0.68, -0.55, 0.265, 1.55], }}
+          transition={{
+            delay: 0.75,
+            duration: 1.5,
+            ease: [0.68, -0.55, 0.265, 1.55],
+          }}
           className="relative flex flex-col justify-center items-center z-10 text-[0.95rem] text-text-mid tracking-widest text-black bg-white/30 backdrop-blur-sm px-4 py-2 rounded-full"
         >
           <span>Sunday, 28th June 2026</span>
@@ -136,25 +160,14 @@ export const HeroSection: React.FC = () => {
         <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ duration: 0.7, delay:0.9 }}
           whileTap={{ scale: 0.98 }}
           onClick={scrollToRSVP}
           className="relative z-10 mt-8 px-8 py-3 cursor-pointer bg-gradient-to-r from-[#c9994a] to-[#d4847a] text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group"
         >
           <span>📝</span>
           <span>Confirm Your Presence</span>
-          <motion.span
-            animate={{ y: [0, 3, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: [0.42, 0, 0.58, 1], // cubic-bezier for super smooth
-              repeatType: "loop",
-            }}
-            className="text-sm inline-block"
-          >
-            ↓
-          </motion.span>
+          <span className="text-sm inline-block animate-bounce">↓</span>
         </motion.button>
 
         <ScrollIndicator />
