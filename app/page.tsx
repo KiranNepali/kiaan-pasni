@@ -12,7 +12,8 @@ import { RSVPSection } from '@/components/rsvp/RSVPSection';
 import { Footer } from '@/components/footer/Footer';
 import { ParticleCanvas } from '@/components/shared/ParticleCanvas';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   useScrollReveal();
@@ -29,6 +30,32 @@ export default function HomePage() {
       document.body.style.overflow = 'unset';
     };
   }, [isLoading]);
+
+   useEffect(() => {
+    // Initialize Lenis with correct options
+    const lenis = new Lenis({
+      lerp: 0.1,        // Smoothness (0.05-0.15 recommended)
+      duration: 1.2,    // Animation duration in seconds
+      orientation: 'vertical',   // Scroll direction
+      gestureOrientation: 'vertical', // Gesture direction
+      smoothWheel: true,   // Enable smooth wheel scrolling
+      wheelMultiplier: 1,  // Wheel scroll multiplier
+      touchMultiplier: 2,  // Touch scroll multiplier
+      infinite: false,     // Prevent infinite scrolling
+    });
+
+    // Animation frame loop for smooth 60fps
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Cleanup on unmount
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <>
