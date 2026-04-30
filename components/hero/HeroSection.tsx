@@ -51,7 +51,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       <div className="w-full flex justify-center items-center flex-col -mt-1.5 md:-mt-10">
-        <motion.div style={{ y: lotusY }} className="relative z-10 mb-6">
+        <motion.div style={{ y: lotusY }} className="relative z-10 mb-6 flex justify-center items-center">
           <LotusIcon />
         </motion.div>
 
@@ -158,16 +158,26 @@ export const HeroSection: React.FC = () => {
 
         {/* RSVP Button */}
         <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay:0.9 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           whileTap={{ scale: 0.98 }}
           onClick={scrollToRSVP}
           className="relative z-10 mt-8 px-8 py-3 cursor-pointer bg-gradient-to-r from-[#c9994a] to-[#d4847a] text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group"
         >
           <span>📝</span>
           <span>Confirm Your Presence</span>
-          <span className="text-sm inline-block animate-bounce">↓</span>
+          <motion.span
+            animate={{ y: [0, 4, 0] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="text-sm inline-block"
+          >
+            ↓
+          </motion.span>
         </motion.button>
 
         <ScrollIndicator />
