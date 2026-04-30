@@ -140,8 +140,8 @@ export const EventDetails: React.FC = () => {
                 </p>
                 {/* Open Maps indicator for venue card */}
                 {item.mapLink && (
-                  <div className="mt-3 inline-flex items-center gap-1 text-[0.6rem] text-gold/70 group-hover:text-gold transition-colors duration-300">
-                    <span>📍</span>
+                  <div className="mt-3 inline-flex items-center gap-1 text-[0.6rem] text-white group-hover:text-gold transition-colors duration-300">
+                    {/* <span>📍</span> */}
                     <span>Open in Maps →</span>
                   </div>
                 )}
