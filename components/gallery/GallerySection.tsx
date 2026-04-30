@@ -39,7 +39,7 @@ const galleryItems = [
     image: "/img2.jpg",
     title: "Ready for Pasni!",
     description: "Our little prince in traditional attire",
-    icon: "🎀",
+    icon: "🍚",
   },
 ];
 
@@ -72,12 +72,12 @@ export const GallerySection: React.FC = () => {
             // transition={{ delay: 0.2 }}
             className="font-serif text-[clamp(2rem,6vw,3.5rem)] font-light text-dark mb-4"
           >
-            Our <em className="italic text-rose not-italic">Precious</em> Moments
+            Our <em className="italic text-rose">Precious</em> Moments
           </motion.h2>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            // initial={{ opacity: 0, y: 20 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // transition={{ delay: 0.3 }}
             className="text-text-mid text-sm max-w-md mx-auto px-8"
           >
             A glimpse into Kiaan's journey of love, laughter, and little adventures
@@ -90,9 +90,8 @@ export const GallerySection: React.FC = () => {
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1, duration: 0.5, ease:easeInOut }}
-              viewport={{ once: false, margin: "-50px" }}
-              whileHover={{ y: -8 }}
+              transition={{ duration: 0.5, ease:easeInOut }}
+              viewport={{ once: true, margin: "-100px" }}
               onClick={() => setSelectedImage(item.id)}
               className="group cursor-pointer"
             >

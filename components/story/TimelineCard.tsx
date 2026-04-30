@@ -25,11 +25,12 @@ export const TimelineCard: React.FC<TimelineCardProps> = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{
-        delay: index * 0.1,
-        duration: 0.5,
+        // delay: index * 0.1,
+        duration: 1,
         ease: "easeOut",
       }}
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
+      // viewport={{ once: true, margin: "100px" }}
       // viewport={{ once: true }}
       className="bg-white/65 backdrop-blur-xl border cursor-pointer border-white/80 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
     >
