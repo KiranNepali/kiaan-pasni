@@ -17,8 +17,8 @@ const eventDetails = [
   {
     icon: "🕙",
     label: "TIME",
-    detail: "10:00 AM",
-    info: "Ceremony begins at 10:30 AM",
+    detail: "16:00 PM",
+    info: "Ceremony begins at 16:00 PM",
     bgImage: null,
     mapLink: null,
   },
@@ -30,30 +30,30 @@ const eventDetails = [
     bgImage: "/venue.avif",
     mapLink: "https://www.google.com/maps?q=Seuralantie+11+Seinäjoki+Finland",
   },
-  {
-    icon: "🎊",
-    label: "DRESS",
-    detail: "Maroon",
-    info: "Optional · Traditional welcome",
-    bgImage: null,
-    mapLink: null,
-  },
+  // {
+  //   icon: "🎊",
+  //   label: "DRESS",
+  //   detail: "Maroon / White",
+  //   info: "Optional",
+  //   bgImage: null,
+  //   mapLink: null,
+  // },
   {
     icon: "🍽️",
     label: "FEAST",
     detail: "Nepali Bhoj",
-    info: "Traditional lunch",
+    info: "Traditional Nepali lunch",
     bgImage: null,
     mapLink: null,
   },
-  {
-    icon: "🙏",
-    label: "BLESSING",
-    detail: "Tika & Ashirwad",
-    info: "Bring warmest blessings",
-    bgImage: null,
-    mapLink: null,
-  },
+  // {
+  //   icon: "🙏",
+  //   label: "BLESSING",
+  //   detail: "Tika & Ashirwad",
+  //   info: "Bring warmest blessings",
+  //   bgImage: null,
+  //   mapLink: null,
+  // },
 ];
 
 export const EventDetails: React.FC = () => {
@@ -75,7 +75,7 @@ export const EventDetails: React.FC = () => {
       </div>
 
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6">
           {eventDetails.map((item, idx) => (
             <motion.div
               key={idx}

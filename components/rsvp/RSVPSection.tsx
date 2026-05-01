@@ -18,7 +18,7 @@ export const RSVPSection: React.FC = () => {
           Confirm Your <em className="italic text-rose">Presence</em>
         </h2>
         <p className="text-text-mid text-[0.9rem] mt-2">
-          Please let us know by 1st June 2026
+          Please let us know by <span className="font-bold">31st May 2026</span>
         </p>
       </div>
 

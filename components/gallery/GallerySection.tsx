@@ -84,7 +84,7 @@ export const GallerySection: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="max-w-6xl mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 relative z-10">
+        <div className="max-w-6xl mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 relative z-10">
           {galleryItems.map((item, idx) => (
             <motion.div
               key={item.id}

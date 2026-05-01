@@ -7,10 +7,9 @@ import { easeInOut, motion } from 'framer-motion';
 const culturalSymbols = [
   { symbol: "🍚", name: "Annaprashan" },
   { symbol: "🔴", name: "Tika" },
-  { symbol: "🪔", name: "Deepa" },
+  { symbol: "🪔", name: "Deep" },
   { symbol: "🌸", name: "Phool" },
-  { symbol: "🎵", name: "Mantra" },
-  { symbol: "👶", name: "Kiaan" },
+  { symbol: "🎵", name: "Mantra" }
 ];
 
 export const CulturalSection: React.FC = () => {
@@ -58,7 +57,7 @@ export const CulturalSection: React.FC = () => {
         </motion.blockquote>
 
         <p className="max-w-2xl mx-auto text-[0.9rem] leading-relaxed text-white/60">
-          Pasni (पस्नी), meaning &quot;rice feeding,&quot; is one of the most cherished
+          Pasni, meaning &quot;rice feeding,&quot; is one of the most cherished
           Hindu rites of passage — the Annaprashan ceremony. When a baby is
           six months old, the family gathers to offer the child their first
           taste of cooked rice, symbolizing the transition from milk to solid

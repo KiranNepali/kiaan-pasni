@@ -88,7 +88,7 @@ export const StorySection: React.FC = () => {
           My <em className="italic text-rose not-italic">Journey</em>
         </h2>
         <p className="max-w-130 mx-auto text-text-mid text-[0.95rem] leading-relaxed">
-          From the very first breath to this golden milestone — every moment
+          From the very first breath to this golden milestone every moment
           has been a blessing worth celebrating.
         </p>
       </div>

@@ -79,7 +79,7 @@ export const HeroSection: React.FC = () => {
             duration: 1,
             ease: [0.68, -0.55, 0.265, 1.55],
           }}
-          className="relative z-10 font-serif text-[clamp(4rem,12vw,9rem)] font-light leading-[0.9] text-dark tracking-[-0.02em]"
+          className="relative z-10 uppercase font-serif text-[clamp(4rem,12vw,9rem)] font-light leading-[0.9] text-dark tracking-[-0.02em]"
         >
           Kiaan
           <motion.span
@@ -95,7 +95,7 @@ export const HeroSection: React.FC = () => {
               backgroundSize: "200% auto",
             }}
           >
-            Richheart Raut
+            Richeart Raut
           </motion.span>
         </motion.h1>
         <motion.p
