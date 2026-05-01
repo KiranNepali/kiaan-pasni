@@ -14,13 +14,13 @@ import { ParticleCanvas } from "@/components/shared/ParticleCanvas";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
+
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   useScrollReveal();
 
-  // Optional: Preload main content while loading screen shows
+  // Prevent body scroll while loading
   useEffect(() => {
-    // Prevent body scroll while loading
     if (isLoading) {
       document.body.style.overflow = "hidden";
     } else {
@@ -30,47 +30,77 @@ export default function HomePage() {
       document.body.style.overflow = "unset";
     };
   }, [isLoading]);
+
+  // Audio setup
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [hasPlayed, setHasPlayed] = useState(false);
+
   useEffect(() => {
-    if (!isLoading && audioRef.current) {
+    if (!isLoading && audioRef.current && !hasPlayed) {
       const playAudio = () => {
-        audioRef.current?.play().catch(() => {});
+        if (audioRef.current && !hasPlayed) {
+          audioRef.current.play()
+            .then(() => {
+              setHasPlayed(true);
+            })
+            .catch((error) => {
+              console.log("Audio play failed:", error);
+            });
+        }
+        // Remove listeners after first play attempt
+        window.removeEventListener("scroll", playAudio);
         window.removeEventListener("click", playAudio);
+        window.removeEventListener("touchstart", playAudio);
       };
 
-      // try autoplay
-      audioRef.current.play().catch(() => {});
+      const handleVisibilityChange = () => {
+        if (document.hidden && audioRef.current) {
+          audioRef.current.pause();
+        } else if (!document.hidden && audioRef.current && hasPlayed) {
+          // Optional: Resume when page becomes visible again
+          // audioRef.current.play().catch(() => {});
+        }
+      };
 
-      // fallback: first user interaction
+      // Try autoplay first (may fail due to browser policies)
+      audioRef.current.play()
+        .then(() => setHasPlayed(true))
+        .catch(() => {});
+
+      // Fallback: play on user interaction
+      document.addEventListener("visibilitychange", handleVisibilityChange);
+      window.addEventListener("scroll", playAudio);
       window.addEventListener("click", playAudio);
+      window.addEventListener("touchstart", playAudio);
 
       return () => {
+        window.removeEventListener("scroll", playAudio);
         window.removeEventListener("click", playAudio);
+        window.removeEventListener("touchstart", playAudio);
+        document.removeEventListener("visibilitychange", handleVisibilityChange);
       };
     }
-  }, [isLoading]);
+  }, [isLoading, hasPlayed]);
 
+  // Lenis smooth scroll
   useEffect(() => {
-    // Initialize Lenis with correct options
     const lenis = new Lenis({
-      lerp: 0.1, // Smoothness (0.05-0.15 recommended)
-      duration: 1.2, // Animation duration in seconds
-      orientation: "vertical", // Scroll direction
-      gestureOrientation: "vertical", // Gesture direction
-      smoothWheel: true, // Enable smooth wheel scrolling
-      wheelMultiplier: 1, // Wheel scroll multiplier
-      touchMultiplier: 2, // Touch scroll multiplier
-      infinite: false, // Prevent infinite scrolling
+      lerp: 0.1,
+      duration: 1.2,
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
     });
 
-    // Animation frame loop for smooth 60fps
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
 
-    // Cleanup on unmount
     return () => {
       lenis.destroy();
     };
@@ -84,7 +114,6 @@ export default function HomePage() {
 
       {!isLoading && (
         <>
-          {/* Fixed Background Elements */}
           <div
             className="fixed inset-0 pointer-events-none z-0 opacity-[0.04]"
             style={{
@@ -95,7 +124,7 @@ export default function HomePage() {
               `,
             }}
           />
-          <audio ref={audioRef} src="/mangal-dhun.mp3" loop />
+          <audio ref={audioRef} src="/mangal-dhun.mp3" loop preload="auto" />
           <ParticleCanvas />
           <HeroSection />
           <StorySection />

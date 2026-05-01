@@ -8,16 +8,8 @@ import Image from 'next/image';
 export const LotusIcon: React.FC = () => {
   return (
     <motion.div
-      // animate={{ 
-      //   y: [0, -5, 0],
-      // }}
-      // transition={{ 
-      //   duration: 3, 
-      //   repeat: Infinity, 
-      //   ease: "easeInOut" 
-      // }}
       className="relative"
-      style={{ width: "120px", height: "120px" }}
+      style={{ width: "160px", height: "160px" }}
     >
       {/* Rotating outer petals */}
       <motion.div
@@ -25,7 +17,7 @@ export const LotusIcon: React.FC = () => {
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
         className="absolute inset-0"
       >
-        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+        <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
           <defs>
             <linearGradient id="petalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#f7c5c0" />
@@ -34,11 +26,11 @@ export const LotusIcon: React.FC = () => {
             </linearGradient>
           </defs>
 
-          <g transform="translate(60, 60)">
+          <g transform="translate(80, 80)">
             {[...Array(12)].map((_, i) => (
               <path
                 key={i}
-                d="M0 -25 Q-8 -40 0 -50 Q8 -40 0 -25"
+                d="M0 -35 Q-12 -55 0 -70 Q12 -55 0 -35"
                 fill="url(#petalGrad)"
                 opacity={0.8}
                 transform={`rotate(${i * 30})`}
@@ -54,12 +46,12 @@ export const LotusIcon: React.FC = () => {
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
         className="absolute inset-0"
       >
-        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <g transform="translate(60, 60)">
+        <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
+          <g transform="translate(80, 80)">
             {[...Array(8)].map((_, i) => (
               <path
                 key={i}
-                d="M0 -15 Q-5 -25 0 -32 Q5 -25 0 -15"
+                d="M0 -22 Q-7 -35 0 -45 Q7 -35 0 -22"
                 fill="#e8c97a"
                 opacity={0.6}
                 transform={`rotate(${i * 45 + 15})`}
@@ -69,45 +61,18 @@ export const LotusIcon: React.FC = () => {
         </svg>
       </motion.div>
 
-      {/* Floating sparkles */}
-      {/* {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={`sparkle-${i}`}
-          animate={{ 
-            y: [0, -20, 0],
-            x: [0, (i % 2 === 0 ? 15 : -15), 0],
-            opacity: [0, 1, 0],
-            scale: [0, 1, 0]
-          }}
-          transition={{ 
-            duration: 3, 
-            delay: i * 0.5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute text-yellow-300 text-sm"
-          style={{ 
-            left: "50%", 
-            top: "50%",
-            transform: `rotate(${i * 60}deg) translateY(-55px)`
-          }}
-        >
-          ✨
-        </motion.div>
-      ))} */}
-
-      {/* Center circle with baby image - no black border */}
+      {/* Center circle with baby image */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative">
           {/* Glowing ring */}
           <motion.div
             animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="absolute -inset-2 rounded-full bg-gradient-to-r from-gold/40 to-rose/30 blur-md"
+            className="absolute -inset-3 rounded-full bg-gradient-to-r from-gold/40 to-rose/30 blur-md"
           />
           
-          {/* Image circle - transparent background */}
-          <div className="relative w-12 h-12 rounded-full border border-white/50 overflow-hidden shadow-lg bg-transparent">
+          {/* Image circle */}
+          <div className="relative w-20 h-20 rounded-full border-2 border-white/50 overflow-hidden shadow-lg bg-transparent">
             <Image
               src="/img2.jpg"
               alt="Kiaan"
