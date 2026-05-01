@@ -12,16 +12,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// app/layout.tsx
 export const metadata: Metadata = {
   title: "Kiaan - Pasni",
   description: "Pasni ceremony invitation",
+  metadataBase: new URL("https://kiaan-pasni.vercel.app"), // Your live site URL
   icons: {
     icon: "/icon.png",
   },
   openGraph: {
+    title: "Kiaan's Pasni Ceremony",
+    description: "Join us to celebrate Kiaan's first rice feeding ceremony",
+    images: ["/img2.jpg"],
+    type: "website",
+    url: "https://kiaan-pasni.vercel.app",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kiaan's Pasni Ceremony",
+    description: "Join us to celebrate Kiaan's first rice feeding ceremony",
     images: ["/img2.jpg"],
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{

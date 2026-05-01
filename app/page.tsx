@@ -47,7 +47,7 @@ export default function HomePage() {
               console.log("Audio play failed:", error);
             });
         }
-        // Remove listeners after first play attempt
+        // Remove listeners after first play
         window.removeEventListener("scroll", playAudio);
         window.removeEventListener("click", playAudio);
         window.removeEventListener("touchstart", playAudio);
@@ -55,20 +55,23 @@ export default function HomePage() {
 
       const handleVisibilityChange = () => {
         if (document.hidden && audioRef.current) {
+          // Page is hidden (minimized or switched tab) - PAUSE
           audioRef.current.pause();
         } else if (!document.hidden && audioRef.current && hasPlayed) {
-          // Optional: Resume when page becomes visible again
-          // audioRef.current.play().catch(() => {});
+          // Page is visible again - RESUME PLAYING
+          audioRef.current.play().catch(() => {});
         }
       };
 
-      // Try autoplay first (may fail due to browser policies)
+      // Try autoplay first
       audioRef.current.play()
         .then(() => setHasPlayed(true))
         .catch(() => {});
 
-      // Fallback: play on user interaction
+      // Listen for page visibility changes
       document.addEventListener("visibilitychange", handleVisibilityChange);
+      
+      // Fallback: play on user interaction
       window.addEventListener("scroll", playAudio);
       window.addEventListener("click", playAudio);
       window.addEventListener("touchstart", playAudio);
@@ -81,6 +84,29 @@ export default function HomePage() {
       };
     }
   }, [isLoading, hasPlayed]);
+
+  // Additional effect to handle page blur/focus
+  useEffect(() => {
+    const handleBlur = () => {
+      if (audioRef.current && hasPlayed) {
+        audioRef.current.pause();
+      }
+    };
+
+    const handleFocus = () => {
+      if (audioRef.current && hasPlayed && !document.hidden) {
+        audioRef.current.play().catch(() => {});
+      }
+    };
+
+    window.addEventListener("blur", handleBlur);
+    window.addEventListener("focus", handleFocus);
+
+    return () => {
+      window.removeEventListener("blur", handleBlur);
+      window.removeEventListener("focus", handleFocus);
+    };
+  }, [hasPlayed]);
 
   // Lenis smooth scroll
   useEffect(() => {
